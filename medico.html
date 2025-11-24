@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Médico - Clínica Médica</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Painel do Médico</h2>
+
+        <h4>Registrar Consulta</h4>
+        <form id="registro-consulta">
+            <div class="mb-3">
+                <label for="nome_paciente_consulta" class="form-label">Nome do Paciente</label>
+                <input type="text" class="form-control" id="nome_paciente_consulta" required>
+            </div>
+            <div class="mb-3">
+                <label for="idade_paciente_consulta" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade_paciente_consulta" required>
+            </div>
+            <div class="mb-3">
+                <label for="descricao_problema" class="form-label">Descrição do Problema</label>
+                <textarea class="form-control" id="descricao_problema" rows="3" required></textarea>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="registrarConsulta()">Registrar</button>
+        </form>
+
+        <h4 class="mt-5">Registros de Consultas</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome do Paciente</th>
+                    <th>Idade</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody id="lista-consultas">
+                <!-- Tabela será preenchida dinamicamente com JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

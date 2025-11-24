@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Clínica Médica</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Painel do Administrador</h2>
+        <div class="alert alert-success d-none" id="user-success" role="alert">Usuário cadastrado com sucesso!</div>
+        
+        <h4>Cadastrar Usuário</h4>
+        <form id="cadastro-usuario">
+            <div class="mb-3">
+                <label for="tipo_usuario_cadastro" class="form-label">Tipo de Usuário</label>
+                <select class="form-select" id="tipo_usuario_cadastro" required>
+                    <option value="">Selecione o tipo de usuário</option>
+                    <option value="medico">Médico</option>
+                    <option value="funcionario">Funcionário</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="crm" class="form-label">CRM (para médicos)</label>
+                <input type="text" class="form-control" id="crm">
+            </div>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" required>
+            </div>
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" required>
+            </div>
+            <div class="mb-3">
+                <label for="data_nascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="data_nascimento" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" class="form-control" id="telefone" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="cadastrarUsuario()">Cadastrar</button>
+        </form>
+        
+        <h4 class="mt-5">Lista de Usuários</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tipo</th>
+                    <th>Nome</th>
+                    <th>CRM (se aplicável)</th>
+                    <th>CPF</th>
+                    <th>Data de Nascimento</th>
+                    <th>Telefone</th>
+                </tr>
+            </thead>
+            <tbody id="lista-usuarios">
+                <!-- Tabela será preenchida dinamicamente com JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+>
