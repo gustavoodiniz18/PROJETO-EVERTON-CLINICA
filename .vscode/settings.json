@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
   "java.compile.nullAnalysis.mode": "automatic"
+=======
+  "liveServer.settings.port": 5502
+>>>>>>> 89050216e75334780c4019725b073f51432039c1
 }

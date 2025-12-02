@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 
 /*!
@@ -6,6 +7,8 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+=======
+>>>>>>> 89050216e75334780c4019725b073f51432039c1
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -11717,6 +11720,10 @@ fieldset:disabled .btn {
     .d-print-none {
         display: none !important
     }
+<<<<<<< HEAD
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+=======
+}
+>>>>>>> 89050216e75334780c4019725b073f51432039c1
