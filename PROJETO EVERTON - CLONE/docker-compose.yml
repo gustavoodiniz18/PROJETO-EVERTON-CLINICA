@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: clinica-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: clinica
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - clinica-net
+
+  backend:
+    build: .
+    container_name: clinica-backend
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/clinica
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - clinica-net
+
+volumes:
+  mysql_data:
+
+networks:
+  clinica-net:

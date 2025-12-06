@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clinica-backend
+  labels:
+    app: clinica-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: clinica-backend
+  template:
+    metadata:
+      labels:
+        app: clinica-backend
+    spec:
+      containers:
+        - name: clinica-backend
+          image: SEU_USUARIO_DOCKER/clinica-backend:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: clinica-config
+                  key: datasource_url
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: clinica-secret
+                  key: username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: clinica-secret
+                  key: password
